@@ -1,1 +1,11 @@
+function isPangram(string){
+  //...
+  
+    string = string.toLowerCase().replace(/[^a-z]/g, '');
+    const uniqueChars = new Set(string);
+    return uniqueChars.size === 26;
 
+}
+
+const sentence = "My name is Alfonso and I am trying to detect a pangram";
+console.log(isPangram(sentence));
