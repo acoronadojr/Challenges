@@ -1,11 +1,14 @@
+# first i declare a function named "isPangram" to determine if the string is a pangram
 function isPangram(string){
   //...
-  
+# then i sanitize the string using "toLowerCase " to convert the string to all lowercase to make the comparison case sensitive and use "(/[^a-z]/g) " to remove all non aplhabetical characters from my string
     string = string.toLowerCase().replace(/[^a-z]/g, '');
+# then i create a set so that it will only contain unqiue characters from the string
     const uniqueChars = new Set(string);
+# then this function checks if the size of my set is 26 and if it is that means there are 26 unique alphabetic characters
     return uniqueChars.size === 26;
 
 }
-
+# finally, i assign a sentence to my "sentence" variable and then call my "ispangram" function with my "sentence" as the argument and the console will log the result which should output true or false
 const sentence = "My name is Alfonso and I am trying to detect a pangram";
 console.log(isPangram(sentence));
