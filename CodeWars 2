@@ -1,23 +1,26 @@
+# first i create a function "alphabetPosition" with a text parameter aiming to turn each letter in the input text to its corresponding position in the aplhabet
 function alphabetPosition(text) {
   
-  
+# then i define my alphabet string to contain all lowercase letters in the alphabet
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+# then i convert my input "text" to all lowercase to make the comparison case sensitive
   text = text.toLowerCase();
-
+# then this function iterates through each character in "text" and uses "alphabet.includes" to check if it exists in the "alphabet" string
   let result = '';
   for (let i = 0; i < text.length; i++) {
     const char = text.charAt(i);
     if (alphabet.includes(char)) {
+# the position of the character is then determined using "indexOf(char)" IF the character is found in the alphabet
       const position = alphabet.indexOf(char) + 1;
       result += position + ' ';
     }
   }
-
+# i then return my result
   return result.trim();
 
   return text;
-}
-
+} 
+#finally i define an "inputText"  and call "alphabetPosition" function with my "inputText" and the resulting string will be logged to the console which should be a string of numbers indicating each letter's position
 const inputText = "Hello, World!";
 const result = alphabetPosition(inputText);
 console.log(result);
