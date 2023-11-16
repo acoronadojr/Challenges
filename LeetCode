@@ -1,14 +1,18 @@
 **
  * @return {null|boolean|number|string|Array|Object}
  */
+// i add a "last" method to the prototype of the "array" object so that all arrays in the script  will have access to the method
 Array.prototype.last = function() {
+// then i check if the array "this" has a length of 0 and if it does it will return -1 indicating theres no last element to retrieve
       if (this.length === 0) {
     return -1;
   }
+// if it is not empty is returns the last element
   return this[this.length - 1];
 
 };
-
+// finally i create an array called "nums: containing numbers
 const nums = [3, 7, 13, 4, 78, 2];
+// then i call the "last()" method on my "(nums.last())" array which then retrieves and returns the last element of my "nums" array
 console.log(nums.last()); 
-
+// the console.log will output the result to my console
